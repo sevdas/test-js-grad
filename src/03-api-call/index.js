@@ -33,7 +33,14 @@ The expected output is:
     "url": "http://swapi.dev/api/people/1/"
 }
  */
+const fetch = require('node-fetch');
+const url = 'https://swapi.dev/api/people/1/';
 
-module.exports = async function fetchLukeSkywalker() {
+async function fetchLukeSkywalker() {
   // TODO
-};
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+
+module.exports = fetchLukeSkywalker;
